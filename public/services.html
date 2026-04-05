@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services – Developsy Global</title>
+<link rel="icon" type="image/png" href="sources/logo/logo_title.png">
+<meta name="description" content="Explore Developsy Global's full range of digital services — eCommerce, portfolio websites, full-code custom development, and SEO."/>
+<link rel="canonical" href="https://developsyglobal.in/services.html"/>
+<link rel="stylesheet" href="shared.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0A1628 0%, #1a2f50 60%, #0a1f3d 100%);
+    padding: 140px 5% 80px;
+    text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(0,126,255,0.25) 0%, transparent 60%);
+  }
+  .page-hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,126,255,0.2); border: 1px solid rgba(0,126,255,0.4);
+    border-radius: 50px; padding: 5px 14px;
+    font-size: 11px; font-weight: 700; color: #7FDDFF;
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 18px;
+    position: relative; z-index: 1;
+  }
+  .page-hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -1.5px; margin-bottom: 16px;
+    position: relative; z-index: 1;
+  }
+  .page-hero h1 span { color: var(--blue); }
+  .page-hero p {
+    font-size: 17px; opacity: .8; max-width: 560px;
+    margin: 0 auto; line-height: 1.7;
+    position: relative; z-index: 1;
+  }
+
+  .services-section { padding: 100px 5%; background: var(--off-white); }
+  .services-full-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px; max-width: 1100px; margin: 0 auto;
+  }
+
+  .service-card {
+    background: #fff; border: 1.5px solid var(--border);
+    border-radius: 24px; padding: 36px 30px;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; height: 100%;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--blue), #00C6FF);
+    transform: scaleX(0); transition: transform .35s; transform-origin: left;
+  }
+  .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,126,255,0.14); border-color: var(--blue); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-content { flex: 1; }
+  .service-icon {
+    width: 60px; height: 60px; border-radius: 18px;
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin-bottom: 22px; color: var(--blue);
+  }
+  .service-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px;
+  }
+  .service-card .service-desc { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px; }
+  .service-features { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+  .service-features li { font-size: 13px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 8px; }
+  .service-features li i { color: var(--blue); font-size: 12px; margin-top: 2px; width: 16px; flex-shrink: 0; }
+  .service-btn-wrapper {
+    margin-top: auto; padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .service-action-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--blue-light); border: 2px solid var(--blue);
+    border-radius: 60px; padding: 12px 20px;
+    font-size: 13px; font-weight: 700; color: var(--blue);
+    text-decoration: none; transition: all 0.3s ease;
+    cursor: pointer; font-family: 'Sora', sans-serif;
+    width: 100%;
+  }
+  .service-action-btn:hover {
+    background: var(--blue); color: #fff;
+    transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,126,255,0.25);
+  }
+  .service-action-btn i { transition: transform 0.2s; }
+  .service-action-btn:hover i { transform: translateX(4px); }
+  .double-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  .double-btns .service-action-btn { 
+    width: 100%; 
+    margin: 0; 
+  }
+
+  .why-section { padding: 100px 5%; background: #fff; }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px; max-width: 1100px; margin: 0 auto;
+  }
+  .why-card {
+    background: var(--off-white); border: 1.5px solid var(--border);
+    border-radius: 20px; padding: 32px 28px;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .why-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px var(--shadow); }
+  .why-icon {
+    width: 54px; height: 54px; border-radius: 16px;
+    background: var(--blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 18px; color: var(--blue);
+  }
+  .why-card h3 { font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+  .why-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+  .cta-banner {
+    background: linear-gradient(135deg, var(--blue) 0%, #005FCC 100%);
+    padding: 80px 5%; text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  }
+  .cta-banner h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 800; margin-bottom: 14px; position: relative; z-index: 1;
+  }
+  .cta-banner p {
+    font-size: 16px; opacity: .9; max-width: 500px;
+    margin: 0 auto 32px; line-height: 1.6; position: relative; z-index: 1;
+  }
+  .cta-banner .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn-white {
+    background: #fff; color: var(--blue);
+    padding: 14px 32px; border-radius: 50px;
+    font-size: 15px; font-weight: 700;
+    text-decoration: none; transition: all .2s;
+    font-family: 'Sora', sans-serif; box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.2); }
+  .btn-outline-white {
+    background: transparent; border: 2px solid rgba(255,255,255,0.7);
+    color: #fff; padding: 13px 30px; border-radius: 50px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none; transition: all .2s; font-family: 'Sora', sans-serif;
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+  @media (max-width: 1024px) {
+    .services-full-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .services-full-grid, .why-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<!-- ══ DEVELOPSY WELCOME POPUP (MOBILE OPTIMIZED - SMALLER) ══ -->
+<div id="welcome-popup-overlay" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,22,40,0.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div id="welcome-popup-card" style="background:#fff;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.2);max-width:340px;width:100%;padding:28px 24px 32px;position:relative;text-align:center;animation:popupSlideUp 0.35s cubic-bezier(.22,1,.36,1);max-height:85vh;overflow-y:auto;">
+    <button onclick="closeWelcomePopup()" aria-label="Close" style="position:absolute;top:12px;right:12px;background:#f0f7ff;border:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:#3B5073;transition:background .2s;" onmouseenter="this.style.background='#E8F3FF';this.style.color='#007EFF'" onmouseleave="this.style.background='#f0f7ff';this.style.color='#3B5073'"><i class="fas fa-times" style="margin:0;"></i></button>
+    <div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#007EFF 0%,#00C6FF 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 6px 16px rgba(0,126,255,0.25);">
+      <img src="sources/logo/logo.jpg" alt="Developsy Global" style="width:42px;height:42px;border-radius:10px;object-fit:cover;">
+    </div>
+    <h2 id="popup-title" style="font-family:'Sora',sans-serif;font-size:20px;font-weight:800;color:#0A1628;margin-bottom:8px;line-height:1.3;">Welcome to <span style="color:#007EFF;">Developsy Global!</span></h2>
+    <p style="font-size:13px;color:#3B5073;line-height:1.55;margin-bottom:20px;">Building powerful digital experiences for modern businesses. Focused on performance, scalability, and real-world impact.</p>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;text-align:left;">
+      <div style="background:#E8F3FF;border:1px solid #C2DEFF;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;"><span style="width:20px;height:20px;border-radius:50%;background:#007EFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="font-size:8px;color:#fff;margin:0;"></i></span><span style="font-size:12px;font-weight:600;color:#0A1628;font-family:'Sora',sans-serif;">WooCommerce Website</span></div>
+      <div style="background:#E8F3FF;border:1px solid #C2DEFF;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;"><span style="width:20px;height:20px;border-radius:50%;background:#007EFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="font-size:8px;color:#fff;margin:0;"></i></span><span style="font-size:12px;font-weight:600;color:#0A1628;font-family:'Sora',sans-serif;">Shopify Website</span></div>
+      <div style="background:#E8F3FF;border:1px solid #C2DEFF;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;"><span style="width:20px;height:20px;border-radius:50%;background:#007EFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="font-size:8px;color:#fff;margin:0;"></i></span><span style="font-size:12px;font-weight:600;color:#0A1628;font-family:'Sora',sans-serif;">Full-Code E-commerce Website</span></div>
+      <div style="background:#E8F3FF;border:1px solid #C2DEFF;border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:10px;"><span style="width:20px;height:20px;border-radius:50%;background:#007EFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-check" style="font-size:8px;color:#fff;margin:0;"></i></span><span style="font-size:12px;font-weight:600;color:#0A1628;font-family:'Sora',sans-serif;">Business Website</span></div>
+    </div>
+    <button onclick="closeWelcomePopup()" style="width:100%;background:linear-gradient(135deg,#007EFF 0%,#00C6FF 100%);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-size:14px;font-weight:700;font-family:'Sora',sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(0,126,255,0.35);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:6px;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(0,126,255,0.45)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 4px 16px rgba(0,126,255,0.35)'">Explore Website <i class="fas fa-arrow-right" style="margin:0;font-size:12px;"></i></button>
+  </div>
+</div>
+<style>
+@keyframes popupFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popupSlideUp{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+#welcome-popup-overlay{transition:opacity .25s}
+#welcome-popup-overlay.hiding{opacity:0}
+@media(max-width:480px){
+  #welcome-popup-card{padding:22px 18px 26px!important;}
+}
+</style>
+<script>
+(function(){
+  var K="dg_welcome_seen";
+  var o=document.getElementById("welcome-popup-overlay");
+  if(sessionStorage.getItem(K)){o.style.display="none";}
+  o.addEventListener("click",function(e){if(e.target===o)closeWelcomePopup();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeWelcomePopup();});
+})();
+function closeWelcomePopup(){
+  var o=document.getElementById("welcome-popup-overlay");
+  if(!o)return;
+  o.classList.add("hiding");
+  setTimeout(function(){o.style.display="none";},250);
+  sessionStorage.setItem("dg_welcome_seen","1");
+}
+</script>
+<!-- ══ END WELCOME POPUP ══ -->
+
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-circle">
+      <img src="sources/logo/logo.jpg" alt="Developsy Global Logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='DG'">
+    </div>
+    <span class="logo-name">Developsy <span>Global</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html#contact" class="btn-nav">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-container">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="about.html">About Us</a>
+    <a href="index.html#contact" class="btn-nav-mob">Contact Us</a>
+    <button class="close-menu-btn" onclick="closeMobileMenu()">Close</button>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-tag"><i class="fas fa-cogs"></i> What We Offer</div>
+  <h1>Our <span>Services</span></h1>
+  <p>From eCommerce stores to custom-coded websites — we offer everything your business needs to win online.</p>
+</section>
+
+<section class="services-section">
+  <div class="section-header fade-in">
+    <div class="section-tag"><i class="fas fa-cogs"></i> Full Service Suite</div>
+    <h2 class="section-title">Everything Your Business Needs</h2>
+    <p class="section-sub">Professional digital solutions delivered by experts who understand your market.</p>
+  </div>
+  <div class="services-full-grid">
+
+    <!-- WooCommerce Store Card -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+        <h3>WooCommerce Store</h3>
+        <p class="service-desc">Powerful WordPress-based online stores built for performance, flexibility, and growth.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> Custom Theme Design</li>
+          <li><i class="fas fa-check-circle"></i> Product & Inventory Setup</li>
+          <li><i class="fas fa-check-circle"></i> Payment Gateway Integration</li>
+          <li><i class="fas fa-check-circle"></i> Mobile-Responsive Design</li>
+          <li><i class="fas fa-check-circle"></i> SEO Optimised Structure</li>
+          <li><i class="fas fa-check-circle"></i> Admin Training Included</li>
+        </ul>
+      </div>
+      <div class="service-btn-wrapper">
+        <a href="index.html#contact" class="service-action-btn">Book a Consultation <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Shopify Store Card with VERTICAL BUTTONS (Get Quote added) -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <div class="service-icon"><i class="fas fa-store"></i></div>
+        <h3>Shopify Store</h3>
+        <p class="service-desc">Professional Shopify stores set up, designed, and configured to sell from day one.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> Theme Customisation</li>
+          <li><i class="fas fa-check-circle"></i> Product Upload & Collections</li>
+          <li><i class="fas fa-check-circle"></i> Shopify Payments Setup</li>
+          <li><i class="fas fa-check-circle"></i> Shipping & Tax Configuration</li>
+          <li><i class="fas fa-check-circle"></i> App Integration</li>
+          <li><i class="fas fa-check-circle"></i> Launch Ready in Days</li>
+        </ul>
+      </div>
+      <div class="service-btn-wrapper">
+        <div class="double-btns">
+          <a href="index.html#contact" class="service-action-btn">Book a Consultation <i class="fas fa-arrow-right"></i></a>
+          <a href="#" class="service-action-btn" onclick="openShopifyQuotePDF(); return false;">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-Code eCommerce Website Card with VERTICAL BUTTONS -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h3>Full-Code eCommerce Website</h3>
+        <p class="service-desc">Bespoke eCommerce platform built from scratch with modern technologies — 100% custom, scalable, and built for high performance.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> 2000+ Products Scalable Architecture</li>
+          <li><i class="fas fa-check-circle"></i> Custom Shopping Cart & Checkout</li>
+          <li><i class="fas fa-check-circle"></i> Advanced Admin Dashboard</li>
+          <li><i class="fas fa-check-circle"></i> Payment Gateway Integration (Razorpay/Stripe)</li>
+          <li><i class="fas fa-check-circle"></i> Real-time Inventory Management</li>
+          <li><i class="fas fa-check-circle"></i> SEO Optimised Product Pages</li>
+          <li><i class="fas fa-check-circle"></i> React.js / Next.js Frontend</li>
+          <li><i class="fas fa-check-circle"></i> Node.js / Python Backend</li>
+          <li><i class="fas fa-check-circle"></i> Lifetime Source Code Ownership</li>
+        </ul>
+      </div>
+      <div class="service-btn-wrapper">
+        <div class="double-btns">
+          <a href="index.html#contact" class="service-action-btn">Book a Consultation <i class="fas fa-arrow-right"></i></a>
+          <a href="#" class="service-action-btn" onclick="openQuotePDF(); return false;">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Website Card -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+        <h3>Portfolio Website</h3>
+        <p class="service-desc">Stand out with a stunning portfolio that showcases your work and attracts clients.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> Creative & Unique Design</li>
+          <li><i class="fas fa-check-circle"></i> Project Showcase Gallery</li>
+          <li><i class="fas fa-check-circle"></i> About & Skills Sections</li>
+          <li><i class="fas fa-check-circle"></i> Contact Lead Forms</li>
+          <li><i class="fas fa-check-circle"></i> SEO Optimised Pages</li>
+          <li><i class="fas fa-check-circle"></i> Hosting Ready</li>
+        </ul>
+      </div>
+      <div class="service-btn-wrapper">
+        <a href="index.html#contact" class="service-action-btn">Book a Consultation <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Business Website Card -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <div class="service-icon"><i class="fas fa-building"></i></div>
+        <h3>Business Website</h3>
+        <p class="service-desc">Professional business websites that build credibility and convert visitors into customers.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> Multi-Page Design</li>
+          <li><i class="fas fa-check-circle"></i> Services & About Sections</li>
+          <li><i class="fas fa-check-circle"></i> Contact Forms & Maps</li>
+          <li><i class="fas fa-check-circle"></i> Mobile-First Design</li>
+          <li><i class="fas fa-check-circle"></i> Fast Loading Speed</li>
+          <li><i class="fas fa-check-circle"></i> Google Analytics Setup</li>
+        </ul>
+      </div>
+      <div class="service-btn-wrapper">
+        <a href="index.html#contact" class="service-action-btn">Book a Consultation <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- SEO & Digital Strategy Card -->
+    <div class="service-card fade-in">
+      <div class="service-content">
+        <div class="service-icon"><i class="fas fa-search"></i></div>
+        <h3>SEO & Digital Strategy</h3>
+        <p class="service-desc">Get found on Google and grow organic traffic with targeted SEO strategies.</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> Keyword Research</li>
+          <li><i class="fas fa-check-circle"></i> On-Page SEO Optimisation</li>
+          <li><i class="fas fa-check-circle"></i> Technical SEO Audit</li>
+          <li><i class="fas fa-check-circle"></i> Content Strategy</li>
+          <li><i class="fas fa-check-circle"></i> Monthly Reporting</li>
+          <li><i class="fas fa-check-circle"></i> Local SEO for India</li>
+        </ul>
+      </div>
+      <div class="service-btn-wrapper">
+        <a href="index.html#contact" class="service-action-btn">Book a Consultation <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="section-header fade-in">
+    <div class="section-tag"><i class="fas fa-question-circle"></i> Why Developsy Global</div>
+    <h2 class="section-title">What Makes Us <span>Different</span></h2>
+    <p class="section-sub">We don't just build websites — we build digital success stories.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-bullseye"></i></div>
+      <h3>Results-Driven</h3>
+      <p>Every website is optimised for conversions. Your growth metrics are our KPIs.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-bolt"></i></div>
+      <h3>Fast Delivery</h3>
+      <p>We respect deadlines. Our streamlined process delivers quickly without sacrificing quality.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-handshake"></i></div>
+      <h3>Client-First</h3>
+      <p>We listen before we build. Every project begins with understanding your unique vision.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-trophy"></i></div>
+      <h3>Quality Guaranteed</h3>
+      <p>40+ projects delivered with 98% client satisfaction. Quality is non-negotiable.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-mobile-alt"></i></div>
+      <h3>Mobile-First Design</h3>
+      <p>Every site we build looks and performs perfectly on all devices — phone, tablet, desktop.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-icon"><i class="fas fa-comment-dots"></i></div>
+      <h3>24h Support</h3>
+      <p>Our team responds within 24 hours. We're here whenever you need us.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2>Ready to Start Your Project?</h2>
+  <p>Let's build something amazing together. Get a free consultation with our team today.</p>
+  <div class="cta-btns">
+    <a href="index.html#contact" class="btn-white">Request a Call Back</a>
+    <a href="services.html" class="btn-outline-white">View Our Services</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-circle">
+          <img src="sources/logo/logo.jpg" alt="Developsy Global Logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='DG'">
+        </div>
+        <span class="logo-name">Developsy <span>Global</span></span>
+      </a>
+      <p>Empowering businesses with beautiful websites, custom-coded solutions, and smart digital marketing. Based in Coimbatore, serving clients across India.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="reviews.html">Client Reviews</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">eCommerce Websites</a></li>
+        <li><a href="services.html">Business Websites</a></li>
+        <li><a href="services.html">Portfolio Sites</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:developsyglobal@gmail.com">developsyglobal@gmail.com</a></li>
+        <li><a href="tel:+919962322926">+91 99623 22926</a></li>
+        <li><span>Coimbatore, Tamil Nadu</span></li>
+        <li><a href="https://www.instagram.com/developsyglobal.in/" target="_blank" rel="noopener noreferrer">@developsyglobal.in</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Developsy Global. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function openMobileMenu() { hamburger.classList.add('open'); mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMobileMenu() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }
+  window.closeMobileMenu = closeMobileMenu;
+  hamburger.addEventListener('click', openMobileMenu);
+  document.querySelectorAll('.mobile-menu-container a').forEach(link => link.addEventListener('click', closeMobileMenu));
+  document.addEventListener('click', (e) => {
+    if (mobileMenu.classList.contains('open') && !hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobileMenu();
+  });
+
+  // Function for Full-Code eCommerce Quote PDF
+  function openQuotePDF() { 
+    window.open('sources/docs/ecommerce_full_code_quote.pdf', '_blank'); 
+  }
+  
+  // Function for Shopify Store Quote PDF
+  function openShopifyQuotePDF() { 
+    window.open('sources/docs/ecommerce_shopify_quote.pdf', '_blank'); 
+  }
+  
+  window.openQuotePDF = openQuotePDF;
+  window.openShopifyQuotePDF = openShopifyQuotePDF;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  setTimeout(() => { document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible')); }, 500);
+
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    if (img.complete) img.classList.add('loaded');
+    else img.addEventListener('load', () => img.classList.add('loaded'));
+  });
+</script>
+</body>
+</html>
